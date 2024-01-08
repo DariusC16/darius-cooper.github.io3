@@ -3,14 +3,36 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
-
+function triangles(num) {
+  // CREATING FOR LOOP
+   for (var str = '#'; str.length <= num; str += '#'){
+    console.log(str);
+   }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
+  // CREATING FOR LOOP
+   for (var i = num; i <= end; i++) {
+    // IF NUMBER DIVIDED BY 3 AND 5 IS 0
+     if (i % 3 === 0 && i % 5 === 0) {
+      // CONSOLE LOG  FIZZBUZZ
+       console.log('fizzbuzz');
+    } // IF NUMBER IS DIVIDED BY 3 
+       else if (i % 3 === 0) {
+        // CONSOLE LOG FIZZ
+         console.log('fizz');
+        } // IF NUMBER IS DIVDED BY 5 
+        else if (i % 5 === 0) {
+          // CONSOLE LOG BUZZ
+           console.log('buzz'); 
+          } else {
+            console.log(i);
+          }
+  }
+
   
 }
 
@@ -18,7 +40,8 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
+function drawChessboard(number, number2) {
+  // NOTE TO SELF: NEED HELP WITH THIS 
 
 }
 
