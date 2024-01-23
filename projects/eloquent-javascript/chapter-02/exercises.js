@@ -4,13 +4,20 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(num) {
-   
+  // USING FOR LOOP 
+  // var string = '#';
+  
+  for (var string = '#'; string.length <= num; string+='#') {
+    // CONSOLE LOG STRING
+     console.log(string);
+  }
+
 }
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function fizzBuzz() {
+function fizzBuzz(num, end) {
   // CREATING FOR LOOP
    for (var i = num; i <= end; i++) {
     // IF NUMBER DIVIDED BY 3 AND 5 IS 0
@@ -37,8 +44,28 @@ function fizzBuzz() {
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard(number, number2) {
-  // NOTE TO SELF: NEED HELP WITH THIS 
+function drawChessboard(num) {
+    // CREATING VARIABLE
+    var string = '';
+    // USING FOR LOOP 
+     for (var i = 0; i < num; i++) {
+       // USING ANOTHER FOR LOOP
+        for (var j = 0; j < num; j++) {
+          // IF I + J IS REMAINDER OF 2
+           //console.log(i + j);
+           if ((i + j) % 2 === 0) {
+             // STRING IS ' '
+              string += ' ';
+           } else {
+             // STRING IS '#'
+              string += '#';
+           }
+        }
+       // STRING PLUS NEW TAB
+        string += '\n';
+     }
+     // CONSOLE LOGGING STRING
+      console.log(string);
 
 }
 

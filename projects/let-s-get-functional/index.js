@@ -158,10 +158,83 @@ var friendsCount = function(array, name) {
 
 var topThreeTags = function(array) {
   // FIND THE THREE MOST COMMON TAGS AMONG ALL CUSTOMERS; ASSOCIATED TAGS
-   
+  var count = 0;
+   // USING REDUCE METHOD
+    var a = array.reduce(function(acc, curr) {
+      var tag = curr["tags"];
+      // USING FOR LOOP
+       for (var i = 0; i <= tag.length - 1; i++) {
+         // FIGURING OUT HOW TO COUNT ALL REPATING ELEMENTS
+          // IF ELEMENT IN TAG EXISTS AS A KEY IN ACCUMULATOR OBJECT
+          if (acc[tag[i]]) {
+            // ASSIGN AND ADD 1
+            acc[tag[i]] += 1;
+          } else {
+            // CREATE KEY IN ACCUMULATOR OBJECT
+            acc[tag[i]] = 1;
+          }
+       }
+      // RETURN OBJECT
+       return acc;
+    }, {});
+  //console.log(a);
+  // CREATING EMPTY ARRAY
+   var arr = [];
+
+  // USING FOR IN LOOP
+   for (var key in a) {
+     // IF KEY EXISTS
+      if (key) {
+        // CREATE ARRAY
+         var subArr = [];
+        // PUSH KEY AND KEY VALUE INTO ARRAY
+         subArr.push(key, a[key]);
+        // PUSH ARRAY INTO GLOBAL ARRAY
+        arr.push(subArr);
+      }
+   }
+  //console.log(arr);
+
+  var b = arr.sort(function(a, b) {
+    // USING FOR LOOP TO ACCESS SUB ARRAYS
+     for (var i = 0; i <= a.length - 1; i++) {
+       // IF ARRAY ELEMENT IS A NUMBER
+        if (typeof a[i] === 'number') {
+          // SORT IT WITH B
+           return b[i] - a[i];
+        }
+     }
+  })
+  //console.log(b);
+
+  // RETURNING THE TOP THREE TAGS
+   // CREATING OUTPUT ARRAY
+    var output = [];
+  // PUSHING TOP THREE TAG NAMES INTO ARRAY
+   output.push(b[0][0], b[1][0], b[2][0]);
+  // RETURNING ARRAY OF TAGS
+   return output;
 };
 
-var genderCount;
+var genderCount = function(array) {
+  // CREATE A SUMMARY OF GENDERS
+   // USING REDUCE METHOD
+   var a = array.reduce(function(acc, curr) {
+    // NOW LOOPING THROUGH ARRAY
+     // IF KEY EXISTS IN ACCUMULATOR 
+      if (acc[curr["gender"]]) {
+        // ADD 1
+         acc[curr["gender"]] += 1;
+      } else {
+        // CREATE KEY AND ASSIGN 1
+         acc[curr["gender"]] = 1;
+      }
+    // RETURNING ACCUMULATOR
+     return acc;
+  }, {})
+// RETURNING OBJECT
+ return a;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
