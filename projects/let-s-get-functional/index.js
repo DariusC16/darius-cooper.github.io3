@@ -3,7 +3,7 @@
 'use strict';
 
 var customers = require('./data/customers.json');
-var _ = require(/* Replace this with the name of your lodown! */);
+var _ = require("underbar");
 
 /**
  * 1. Import your lodown module using the require() method,
@@ -16,7 +16,7 @@ var _ = require(/* Replace this with the name of your lodown! */);
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./<YOUR_GITHUB_FOLDER/projects/let-s-get-functional
+ *    npm start --prefix ./darius-cooper.github.io3/projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
@@ -111,7 +111,7 @@ var firstLetterCount = function(array, letter) {
     // USING FILTER METHOD 
     var a = array.filter(function(person) {
       // NOW LOOPING THROUGH ARRAY
-       return person["name"].charAt() === letter
+       return person["name"].charAt() === letter.toLowerCase() || person["name"].charAt() === letter.toUpperCase();
     })
   // RETURNING NUMBER OF NAMES
   return a.length;
@@ -131,7 +131,7 @@ var friendFirstLetterCount = function(array, customer, letter) {
  var friendsArray = a[0]["friends"].filter(function(string) {
    // NOW LOOPING THROUGH ARRAY AGAIN
     // IF OBJECT NAME PROPERTY VALUE HAS A STRING THAT STARTS WITH LETTER
-     return string["name"].charAt() === letter;
+     return string["name"].charAt() === letter.toUpperCase() || string["name"].charAt() === letter.toLowerCase();
  })
 // RETURNING LENGTH OF THE ARRAY
  return friendsArray.length;
